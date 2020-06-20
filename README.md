@@ -26,9 +26,9 @@ $ npm install soss
 
   [MIT](LICENSE)
 
-[npm-image]: https://img.shields.io/npm/v/aslam.svg
-[npm-url]: https://npmjs.org/package/aslam
-[downloads-image]: https://img.shields.io/npm/dm/aslam.svg
-[downloads-url]: https://npmcharts.com/compare/aslam?minimal=true
+[npm-image]: https://img.shields.io/npm/v/io_session_handler.svg
+[npm-url]: https://npmjs.org/package/io_session_handler
+[downloads-image]: https://img.shields.io/npm/dm/io_session_handler.svg
+[downloads-url]: https://npmcharts.com/compare/io_session_handler?minimal=true
 [travis-image]: https://img.shields.io/travis/aslamanver/aslam/io-session-handler.svg?label=linux
 [travis-url]: https://travis-ci.org/aslamanver/io-session-handler
