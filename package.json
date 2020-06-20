@@ -19,7 +19,6 @@
     "node": ">= 0.10.0"
 
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "scripts": {
     "test": "mocha --timeout 36000 test/tests.js"
   },
