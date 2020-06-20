@@ -2,10 +2,9 @@ const events = require('events');
 
 class IOSessionHandler {
 
-    eventEmitter = new events.EventEmitter();
-
     constructor() {
         this.sessions = []
+        this.eventEmitter = new events.EventEmitter()
     }
 
     from(io, opts = { timeout: 5000 }) {
