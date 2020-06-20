@@ -1,3 +1,5 @@
+Pure JavaScript Module for Session Handling
+
 ![IO](https://i.imgur.com/K9Xp39g.png)
 
 Socket session handler for Socket. IO
