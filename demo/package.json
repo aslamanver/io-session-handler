@@ -1,0 +1,19 @@
+{
+  "name": "socket-smp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "ejs": "^3.1.2",
+    "express": "^4.15.2",
+    "io-session-handler": "^1.0.1",
+    "nodemon": "^2.0.4",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
