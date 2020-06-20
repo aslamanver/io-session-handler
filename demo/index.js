@@ -15,6 +15,12 @@ app.get('/sessions', function (req, res) {
     res.json(session_handler.sessions)
 });
 
+app.get('/push_message', function (req, res) {
+    let data = req.query.data
+    io.sockets.emit('push_message', data)
+    res.send(`Sent: "${data}"`)
+});
+
 session_handler.connectionListener((connection) => {
     console.log(connection)
 })
