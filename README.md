@@ -1,3 +1,7 @@
+# Socket-IO Session Handler
+
+![https://i.imgur.com/QIBNgZN.png](https://i.imgur.com/bPSPOZA.png)
+
 Socket session handler for Socket. IO
 
 [![NPM Version][npm-image]][npm-url]
