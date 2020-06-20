@@ -87,7 +87,7 @@ $ npm i io-session-handler
 
 ## Sample Project - Demo
 
-This is a [demo](/demo)
+This is a [demo](/demo) project.
 
 ## License
 
