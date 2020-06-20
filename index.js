@@ -2,7 +2,7 @@ const events = require('events');
 
 class IOSessionHandler {
 
-    #eventEmitter = new events.EventEmitter();
+    eventEmitter = new events.EventEmitter();
 
     constructor() {
         this.sessions = []
@@ -39,12 +39,12 @@ class IOSessionHandler {
     }
 
     connectionListener(listener) {
-        this.#eventEmitter.on('connectionListener', (connection) => listener(connection));
+        this.eventEmitter.on('connectionListener', (connection) => listener(connection));
     }
 
     emitConnectionEvent(connection, status) {
         connection.status = status;
-        this.#eventEmitter.emit('connectionListener', connection);
+        this.eventEmitter.emit('connectionListener', connection);
     }
 
     pushToken(id, token) {
