@@ -49,6 +49,28 @@ The response will be
 ]
 ```
 
+## Client connection
+
+You can connect from web-client, iOS or Android
+
+``` js
+const socket = io({
+    query: {
+        token: '<%= token %>'
+    }
+})
+```
+
+``` java
+public Socket connect(String token) {
+    IO.Options opts = new IO.Options();
+    opts.query = "token=" + token
+    Socket mSocket = IO.socket(server, opts);
+    mSocket.connect();
+    return mSocket;
+}
+```
+
 ## Installation
 
 This is a [Node.js](https://nodejs.org/en/) module available through the
