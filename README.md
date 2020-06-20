@@ -87,11 +87,11 @@ $ npm i io-session-handler
 
 ## License
 
-  [MIT](LICENSE)
+  [MIT](LICENSE.md)
 
 [npm-image]: https://img.shields.io/npm/v/io-session-handler.svg
 [npm-url]: https://npmjs.org/package/io-session-handler
 [downloads-image]: https://img.shields.io/npm/dm/io-session-handler.svg
 [downloads-url]: https://npmcharts.com/compare/io-session-handler?minimal=true
-[travis-image]: https://img.shields.io/travis/aslamanver/aslam/io-session-handler.svg?label=linux
+[travis-image]: https://img.shields.io/travis/aslamanver/aslam/io-session-handler.svg?branch=master
 [travis-url]: https://travis-ci.org/aslamanver/io-session-handler
