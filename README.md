@@ -53,14 +53,12 @@ The response will be
 
 You can connect from web-client, iOS or Android
 
+HTML / JavaScript
 ``` js
-const socket = io({
-    query: {
-        token: '<%= token %>'
-    }
-})
+const socket = io({ query: { token: 'client-token' } })
 ```
 
+Java
 ``` java
 public Socket connect(String token) {
     IO.Options opts = new IO.Options();
