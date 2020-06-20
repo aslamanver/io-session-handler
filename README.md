@@ -1,5 +1,3 @@
-# Socket-IO Session Handler
-
 ![IO](https://i.imgur.com/K9Xp39g.png)
 
 Socket session handler for Socket. IO
