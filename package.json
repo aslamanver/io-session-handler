@@ -1,7 +1,7 @@
 {
   "name": "io-session-handler",
   "description": "Socket session handler for Socket.IO",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Aslam Anver <aslamanver@outlook.com>",
   "license": "MIT",
   "repository": "aslamanver/io-session-handler",
