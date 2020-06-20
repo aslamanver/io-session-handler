@@ -30,5 +30,5 @@ $ npm install soss
 [npm-url]: https://npmjs.org/package/aslam
 [downloads-image]: https://img.shields.io/npm/dm/aslam.svg
 [downloads-url]: https://npmcharts.com/compare/aslam?minimal=true
-[travis-image]: https://img.shields.io/travis/aslamanver/aslam/master.svg?label=linux
-[travis-url]: https://travis-ci.org/aslamanver/aslam
+[travis-image]: https://img.shields.io/travis/aslamanver/aslam/io-session-handler.svg?label=linux
+[travis-url]: https://travis-ci.org/aslamanver/io-session-handler
