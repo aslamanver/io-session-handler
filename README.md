@@ -53,6 +53,12 @@ The response will be
 ]
 ```
 
+You can change the disconnect timeout using the from method options.
+
+```js
+const session_handler = require('io-session-handler').from(io, { timeout: 5000 })
+```
+
 ## Client connection
 
 You can connect from web-client, iOS or Android
