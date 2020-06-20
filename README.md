@@ -4,8 +4,49 @@ Socket session handler for Socket. IO
 [![NPM Downloads][downloads-image]][downloads-url]
 [![Linux Build][travis-image]][travis-url]
 
+## Simple implementation
+
 ``` js
-session_handler
+const app = require('express')()
+const http = require('http').Server(app)
+const io = require('socket.io')(http)
+
+const session_handler = require('io-session-handler').from(io)
+
+/**
+ * Connection returns - Token, ID and the Status (1 - connected, 0 - Disconnected)
+ * 
+ * { id: 'm3aEHZZK2f8WfG3uAAAA', token: '5200cc4a59795529', status: 1 }
+ * 
+ **/
+session_handler.connectionListener((connection) => {
+    console.log(connection)
+})
+
+http.listen(3000)
+```
+
+You can get all the connections using
+
+``` js
+session_handler.sessions
+```
+
+The response will be
+
+``` json
+[
+  {
+    "token": "5200cc4a59795529",
+    "connections": [
+      "I_XzAcQOeIKw8EeMAAAA"
+    ],
+    "data": {
+      "lat": 6.836772412061691,
+      "lon": 79.87546253018081
+    }
+  }
+]
 ```
 
 ## Installation
@@ -19,16 +60,16 @@ Node.js 0.10 or higher is required.
 Installation is done using the
 
 ``` bash
-$ npm install soss
+$ npm i io-session-handler
 ```
 
 ## License
 
   [MIT](LICENSE)
 
-[npm-image]: https://img.shields.io/npm/v/io_session_handler.svg
-[npm-url]: https://npmjs.org/package/io_session_handler
-[downloads-image]: https://img.shields.io/npm/dm/io_session_handler.svg
-[downloads-url]: https://npmcharts.com/compare/io_session_handler?minimal=true
+[npm-image]: https://img.shields.io/npm/v/io-session-handler.svg
+[npm-url]: https://npmjs.org/package/io-session-handler
+[downloads-image]: https://img.shields.io/npm/dm/io-session-handler.svg
+[downloads-url]: https://npmcharts.com/compare/io-session-handler?minimal=true
 [travis-image]: https://img.shields.io/travis/aslamanver/aslam/io-session-handler.svg?label=linux
 [travis-url]: https://travis-ci.org/aslamanver/io-session-handler
