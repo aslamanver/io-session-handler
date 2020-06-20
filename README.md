@@ -85,6 +85,10 @@ Installation is done using the
 $ npm i io-session-handler
 ```
 
+## Sample Project - Demo
+
+This is a [demo](/demo)
+
 ## License
 
   [MIT](LICENSE.md)
