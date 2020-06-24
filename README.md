@@ -107,5 +107,5 @@ This is a [demo](/demo) project.
 [npm-url]: https://npmjs.org/package/io-session-handler
 [downloads-image]: https://img.shields.io/npm/dm/io-session-handler.svg
 [downloads-url]: https://npmcharts.com/compare/io-session-handler?minimal=true
-[travis-image]: https://img.shields.io/travis/aslamanver/aslam/io-session-handler.svg?branch=master
+[travis-image]: https://travis-ci.org/aslamanver/io-session-handler.svg?branch=master
 [travis-url]: https://travis-ci.org/aslamanver/io-session-handler
