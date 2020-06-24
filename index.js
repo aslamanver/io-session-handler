@@ -2,12 +2,16 @@ const events = require('events');
 
 class IOSessionHandler {
 
+    socketIO;
+
     constructor() {
         this.sessions = []
         this.eventEmitter = new events.EventEmitter()
     }
 
     from(io, opts = { timeout: 5000 }) {
+
+        this.socketIO = io;
 
         io.sockets.on('connection', (socket) => {
 
@@ -16,14 +20,12 @@ class IOSessionHandler {
 
             // Connected
             this.onConnect(id, token, (data) => {
-                console.log(`${data.token} Connected`)
                 this.emitConnectionEvent(data, 1);
             })
 
             socket.on('disconnect', () => {
                 // Disconnected
                 this.onDisconnect(id, token, opts.timeout, (data) => {
-                    console.log(`${data.token} Disconnected`)
                     this.emitConnectionEvent(data, 0);
                 })
             })
@@ -31,6 +33,11 @@ class IOSessionHandler {
             socket.on('client_data', (client_data) => {
                 client_data = JSON.parse(client_data)
                 this.addData(client_data.token, client_data.data)
+            })
+
+            socket.on('push_message_delivery', (data) => {
+                data = JSON.parse(data)
+                this.eventEmitter.emit('onMessageDelivered', data);
             })
         })
 
@@ -44,6 +51,10 @@ class IOSessionHandler {
     emitConnectionEvent(connection, status) {
         connection.status = status;
         this.eventEmitter.emit('connectionListener', connection);
+    }
+
+    onMessageDelivered(listener) {
+        this.eventEmitter.on('onMessageDelivered', (data) => listener(data));
     }
 
     pushToken(id, token) {
@@ -97,6 +108,21 @@ class IOSessionHandler {
 
     addData(token, data) {
         this.getSession(token).data = data
+    }
+
+    broadcastMessage(data) {
+        this.socketIO.sockets.emit('push_message', data)
+    }
+
+    pushMessage(token, data) {
+        let session = this.getSession(token);
+        if (session) {
+            let connections = session.connections
+            connections.forEach((connection) => {
+                this.socketIO.to(connection).emit('push_message', data)
+            })
+        }
+        return session != undefined
     }
 }
 
