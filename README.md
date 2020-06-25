@@ -132,7 +132,7 @@ Once the client received the push message it should emit to `push_message_delive
 }
 ```
 
-The client should on the `push_message` to receive push messages from server
+The client should on the `push_message` event to receive push messages from server
 
 Android client library is available at [-]()
 
