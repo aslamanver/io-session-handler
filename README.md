@@ -2,7 +2,7 @@ Pure JavaScript Module for Session Handling | [NPM](https://www.npmjs.com/packag
 
 ![IO](https://i.imgur.com/K9Xp39g.png)
 
-Socket session handler for Socket. IO
+Socket session handler for Socket.IO
 
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
