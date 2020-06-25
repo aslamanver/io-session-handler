@@ -30,7 +30,7 @@ session_handler.connectionListener((connection) => {
 http.listen(3000)
 ```
 
-You can get all the connections using
+To retrieve all the connections using
 
 ``` js
 session_handler.sessions
@@ -53,7 +53,7 @@ The response will be
 ]
 ```
 
-You can change the disconnect timeout using the from method options.
+Disconnect timeout can be changed using the `from` method options.
 
 ```js
 const session_handler = require('io-session-handler').from(io, { timeout: 5000 })
