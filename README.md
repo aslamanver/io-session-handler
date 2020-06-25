@@ -1,4 +1,4 @@
-Pure JavaScript Module for Session Handling
+Pure JavaScript Module for Session Handling | [NPM](https://www.npmjs.com/package/io-session-handler)
 
 ![IO](https://i.imgur.com/K9Xp39g.png)
 
@@ -7,8 +7,6 @@ Socket session handler for Socket. IO
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
 [![Linux Build][travis-image]][travis-url]
-
-Download from [NPM](https://www.npmjs.com/package/io-session-handler)
 
 ## Simple Implementation
 
