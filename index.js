@@ -32,6 +32,7 @@ class IOSessionHandler {
             socket.on('client_data', (client_data) => {
                 client_data = JSON.parse(client_data)
                 this.addData(client_data.token, client_data.data)
+                this.eventEmitter.emit('onClientData', client_data);
             })
 
             socket.on('push_message_delivery', (data) => {
@@ -43,17 +44,21 @@ class IOSessionHandler {
         return this
     }
 
-    connectionListener(listener) {
-        this.eventEmitter.on('connectionListener', (connection) => listener(connection));
-    }
-
     emitConnectionEvent(connection, status) {
         connection.status = status;
         this.eventEmitter.emit('connectionListener', connection);
     }
 
+    connectionListener(listener) {
+        this.eventEmitter.on('connectionListener', (connection) => listener(connection));
+    }
+
     onMessageDelivered(listener) {
         this.eventEmitter.on('onMessageDelivered', (data) => listener(data));
+    }
+
+    onClientData(listener) {
+        this.eventEmitter.on('onClientData', (data) => listener(data));
     }
 
     pushToken(id, token) {
