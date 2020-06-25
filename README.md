@@ -30,7 +30,7 @@ session_handler.connectionListener((connection) => {
 http.listen(3000)
 ```
 
-To retrieve all the connections using
+This array contains all the concurrent sessions `session_handler.sessions`
 
 ``` js
 session_handler.sessions
@@ -59,11 +59,9 @@ Disconnect timeout can be changed using the `from` method options.
 const session_handler = require('io-session-handler').from(io, { timeout: 5000 })
 ```
 
-This array contains all the concurrent sessions `session_handler.sessions`.
-
 ## Client Connection
 
-You can connect from web-client, iOS or Android
+You can connect from Web-Client, iOS or Android
 
 #### HTML / JavaScript
 
@@ -77,7 +75,7 @@ const socket = io({ query: { token: 'client-token' } })
 public Socket connect(String token) {
     IO.Options opts = new IO.Options();
     opts.query = "token=" + token
-    Socket mSocket = IO.socket(server, opts);
+    Socket mSocket = IO.socket("http://127.0.0.1:3000", opts);
     mSocket.connect();
     return mSocket;
 }
