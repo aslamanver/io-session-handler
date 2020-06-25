@@ -23,13 +23,12 @@ app.get('/push_message', function (req, res) {
 
     if (token) {
         let sent = session_handler.pushMessage(token, data)
-        console.log('Sent to: ' + token, sent)
-    } else {
-        session_handler.broadcastMessage(data)
-        console.log('Sent to all', sent)
+        res.send(`Sent to: ${token} | Data: ${data} | status: ${sent}`)
+        return
     }
 
-    res.send(`Sent: "${data}"`)
+    session_handler.broadcastMessage(data)
+    res.send(`Sent to all | Data: ${data}`)
 });
 
 session_handler.connectionListener((connection) => {
