@@ -8,7 +8,7 @@ Socket session handler for Socket. IO
 [![NPM Downloads][downloads-image]][downloads-url]
 [![Linux Build][travis-image]][travis-url]
 
-## Simple implementation
+## Simple Implementation
 
 ``` js
 const app = require('express')()
@@ -59,7 +59,7 @@ You can change the disconnect timeout using the from method options.
 const session_handler = require('io-session-handler').from(io, { timeout: 5000 })
 ```
 
-## Client connection
+## Client Connection
 
 You can connect from web-client, iOS or Android
 
@@ -98,6 +98,41 @@ $ npm i io-session-handler
 ## Sample Project - Demo
 
 This is a [demo](/demo) project.
+
+## Advanced Usage | Push & Broadcast Messages
+
+You can send broadcast message to all client sessions at once.
+
+```js
+session_handler.broadcastMessage(data)
+```
+
+The push method is capable of sending a push message to only a specific client session and this method returns a boolean value when the session is identified as valid.
+
+```js
+let sent = session_handler.pushMessage(client_token, data)
+```
+
+Once the message is delivered to the client, `onMessageDelivered` method will be triggered with the token of the client and the data it received.
+
+```js
+session_handler.onMessageDelivered((data) => {
+    console.log(data)
+})
+```
+
+## Client Implementation | Push & Broadcast Messages
+
+Once the client received the push message it should emit to `push_message_delivery` with the data it receives and the token to let the server understand it's delivered to a certain client.
+
+```json
+{
+   "token":"client_token",
+   "data":"Some awesome data I received"
+}
+```
+
+Android client library is available at [-]()
 
 ## License
 
