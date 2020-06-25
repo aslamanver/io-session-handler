@@ -2,9 +2,8 @@ const events = require('events');
 
 class IOSessionHandler {
 
-    socketIO
-
     constructor() {
+        this.socketIO
         this.sessions = []
         this.eventEmitter = new events.EventEmitter()
     }
