@@ -59,6 +59,8 @@ You can change the disconnect timeout using the from method options.
 const session_handler = require('io-session-handler').from(io, { timeout: 5000 })
 ```
 
+This array contains all the concurrent sessions `session_handler.sessions`.
+
 ## Client Connection
 
 You can connect from web-client, iOS or Android
