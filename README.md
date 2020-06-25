@@ -8,6 +8,8 @@ Socket session handler for Socket. IO
 [![NPM Downloads][downloads-image]][downloads-url]
 [![Linux Build][travis-image]][travis-url]
 
+Download from [NPM](https://www.npmjs.com/package/io-session-handler)
+
 ## Simple Implementation
 
 ``` js
