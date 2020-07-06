@@ -121,6 +121,15 @@ session_handler.onMessageDelivered((data) => {
 })
 ```
 
+The data `onMessageDelivered` contains; 
+
+```json
+{
+   "token":"Token-1",
+   "data":"Some awesome data I received"
+}
+```
+
 ## Client Implementation | Push & Broadcast Messages
 
 Once the client received the push message it should emit to `push_message_delivery` with the data it receives and the token to let the server understand it's delivered to a certain client.

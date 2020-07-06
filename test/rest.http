@@ -1,0 +1,8 @@
+###
+GET http://localhost:3000/sessions
+
+###
+GET http://localhost:3000/push_message?data=MessageToAll
+
+###
+GET http://localhost:3000/push_message?data=MessageToToken&token=APP-1
