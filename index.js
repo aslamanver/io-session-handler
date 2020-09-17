@@ -89,8 +89,8 @@ class IOSessionHandler {
     }
 
     onConnect(id, token, callback) {
-        if (!this.getSession(token)) callback({ id, token })
         this.pushToken(id, token)
+        if (!this.getSession(token)) callback({ id, token })
     }
 
     onDisconnect(id, token, timeout, callback) {
