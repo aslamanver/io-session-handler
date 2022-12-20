@@ -69,6 +69,15 @@ You can connect from Web-Client, iOS or Android
 const socket = io({ query: { token: 'client-token' } })
 ```
 
+Messages sent from the backend will be issued with the send name `push_message`.
+
+```js
+socket.on('push_message', (msg) => {
+    console.log('message: ' + msg);
+});
+```
+
+
 #### Java
 
 ``` java
