@@ -25,6 +25,6 @@
     "test": "mocha --timeout 36000 test/tests.js"
   },
   "devDependencies": {
-    "mocha": "^7.0.1"
+    "mocha": "^10.2.0"
   }
 }
